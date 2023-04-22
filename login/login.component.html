@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title> html css</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+    
+</head>
+<body>
+  <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+  </div>
+  <form #loginForm="ngForm" (ngSubmit)="submitForm(loginForm.value)">
+      <h3>Login Here</h3>
+
+      <label for="username">Email ID</label>
+      <input type="text" placeholder="Email" name="username" ngModel>
+
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" name="password" ngModel>
+
+      <button [disabled]="!loginForm.valid">Log In</button>
+      
+
+      
+<button (click)="signInWithGoogle()">Sign in with Google</button>
+
+        
+  </form>
+  <style>    
+    body {    
+      height: 800px;  
+      
+    background-image:  url("assets/logback.jpg");  
+    }  
+    </style>
+</body>
+</html>

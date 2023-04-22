@@ -1,0 +1,34 @@
+
+<link rel="stylesheet" type="text/css" href="payment.component.css">
+
+<div class="payment-container">
+    <div class="payment-header">
+      <h2>Payment Details</h2>
+    </div>
+    <div class="payment-body">
+      <form #paymentForm="ngForm" (ngSubmit)="submitPayment(paymentForm)">
+        <div class="form-group">
+          <label for="card-number">Card Number:</label>
+          <input type="text" id="card-number" name="cardNumber" required [(ngModel)]="cardNumber">
+        </div>
+        <div class="form-group">
+          <label for="card-name">Cardholder Name:</label>
+          <input type="text" id="card-name" name="cardName" required [(ngModel)]="cardName">
+        </div>
+        <div class="form-group">
+          <label for="expiry-date">Expiry Date:</label>
+          <input type="month" id="expiry-date" name="expiryDate" required [(ngModel)]="expiryDate">
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV:</label>
+          <input type="password" id="cvv" name="cvv" required minlength="3" maxlength="3" [(ngModel)]="cvv">
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" name="amount" required [(ngModel)]="amount">
+        </div>
+        <button type="submit" [disabled]="!paymentForm.valid">Pay Now</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form #regForm="ngForm" (ngSubmit)="registerUser(regForm.value)">
+
+        <h3>Register Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" (keypress)="onlyAlphabetsAllowed($event)" placeholder="username" name="userName" ngModel>
+
+        <label for="emailId">email Id</label>
+        <input type="email" placeholder="email Id@gmail.com" name="emailId" ngModel>
+
+        <label for="mobilenumber">mobilenumber</label>
+        <input type="mobilenumber"(keypress)="OnlyNumbersAllowed($event)" placeholder="mobilenumber" name="mobileNumber" ngModel >
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" name="password" ngModel>
+
+
+
+        <button>Register</button>
+        <!-- <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div> -->
+    </form>
+    <style>    
+        body {    
+          height: 1000px;  
+          
+        background-image:  url("assets/logback.jpg");  
+        }  
+        </style>
+</body>
+</html>

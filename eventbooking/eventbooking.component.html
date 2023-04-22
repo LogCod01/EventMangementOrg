@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="eventbooking.component.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+      </head>
+      
+
+<body>
+	<div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+	</div>
+	
+	<form #bookForm="ngForm" (ngSubmit)="registerEvent(bookForm.value)">
+		<h3>Event Management</h3>
+		<label for="event-type">Select Event Type:</label>
+		<div class="clr">
+		 <select id="event-type" name="eventType" ngModel>
+			<option value="marriage">Marriage</option>
+			<option value="birthday">Birthday</option>
+			<option value="conference">conference</option>
+			<option value="Engagement">Engagement</option>
+			<option value="Reception">Reception</option>
+			<option value="Diwali">Diwali</option>
+			<option value="Sankranti">Sankranti</option>
+		 </select>
+		</div>
+		
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" ngModel>
+		
+		<label for="date">Date:</label>
+		<input type="date" id="date-input" [min]="minDate" name="date" ngModel>
+		<!-- <button (click)="futureDateDisable()">Set max date</button> -->
+		
+		<label for="time">Time:</label>
+		<input type="time" id="time" name="time" ngModel>
+		
+		<!-- <label for="location">Location:</label>
+		<input type="text" id="location" name="location" ngModel> -->
+
+		<label for="location">Select Eventhall & Location:</label>
+		<div class="clr">
+		 <select id="event-location" name="location" ngModel>
+			<option value="Vaaraahi Banquets and Conference Center">Vaaraahi Banquets and Conference Center,Hyderabad</option>
+			<option value="Ashiana Banquet And Conference">Ashiana Banquet And Conference,Secunderabad</option>
+			<option value="Poorna Konvention - Banquet & Convention Hall">Poorna Konvention - Banquet & Convention Hall,Medak</option>
+			<option value="LA ROYALE BANQUET HALL">LA ROYALE BANQUET HALL,Warangal</option>
+		 </select>
+		</div>
+		
+		<label for="guests">Number of Guests:</label>
+		<input type="number" id="guests" name="guests" ngModel>
+		
+		<input type="submit" value="Submit">
+	</form>
+      
+</body>
+</html>
